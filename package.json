@@ -4,7 +4,8 @@
   "description": "A simple webshop",
   "main": "index.js",
   "scripts": {
-    "test": "mocha"
+    "test": "mocha",
+    "start": "nodemon index.js"
   },
   "keywords": [
     "webshop",
@@ -12,5 +13,11 @@
     "FED19S"
   ],
   "author": "Kemal Demirtas",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "supertest": "^4.0.2"
+  }
 }
