@@ -12,8 +12,21 @@
 </head>
 
 <body>
-    <h1>Hallå shoppen</h1>
-    <%= enGrej %>
+    <h1>Products gallery</h1>
+    <ul>
+        <li>Phone</li>
+        <li>Car</li>
+        <li>Table</li>
+        <li>Cat</li>
+        <li>Baby</li>
+    </ul>
+    <form action="/product" method="post">
+        <input type="text" name="name" />
+        <input type="text" name="price" />
+        <input type="text" name="description" />
+        <input type="text" name="imgUrl" />
+        <button type="submit">Add product</button>
+    </form>
 </body>
 
 </html>
