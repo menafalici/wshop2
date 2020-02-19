@@ -6,6 +6,17 @@ const app = express()
 const port = 8080
 const productItem = require('../model/product')
 
+const ROUTE = {
+    product: '/product',
+    gallery: '/gallery',
+    addProduct: '/add-product'
+}
+
+const VIEW = {
+    gallery: 'gallery',
+    product: 'product'
+}
+
 app.use(sassMiddleware({ // tell sassMiddleware where src file and dest directory is
     src: 'sass',
     dest: 'public',
@@ -23,24 +34,24 @@ app.set('view engine', 'ejs')
 
 
 // ------------------  Routs  -------------------//
-app.get('/gallery', (req, res) => {
-    res.status(200).render('gallery', {})
+app.get(ROUTE.gallery, (req, res) => {
+    res.status(200).render(VIEW.gallery, {})
 })
 
-app.get('/product', (req, res) => {
-    res.status(200).render('product', {})
+app.get(ROUTE.product, (req, res) => {
+    res.status(200).render(VIEW.product, {})
 })
 
-app.post('/product', (req, res) => {
+app.post(ROUTE.addProduct, (req, res) => {
     // spara ny produkt
     new productItem({
         name: req.body.name,
         price: req.body.price,
         description: req.body.description,
         imgUrl: req.body.imgUrl
-    }).save()
+    }).save() // och spara till databasen
 
-    res.status(200).render('product', {})
+    res.status(200).redirect(ROUTE.gallery)
 })
 
 module.exports = { app, port, express }

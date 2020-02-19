@@ -12,6 +12,7 @@
 </head>
 
 <body>
+    <!-- example, only to test page -->
     <h1>Products gallery</h1>
     <ul>
         <li>Phone</li>
@@ -20,13 +21,16 @@
         <li>Cat</li>
         <li>Baby</li>
     </ul>
-    <form action="/product" method="post">
-        <input type="text" name="name" />
-        <input type="text" name="price" />
-        <input type="text" name="description" />
-        <input type="text" name="imgUrl" />
-        <button type="submit">Add product</button>
+    <!-- example ends -->
+
+    <form action="/add-product" method="post">
+        <div>Name<input type="text" name="name" /></div>
+        <div>Price<input type="text" name="price" /></div>
+        <div>Desc<input type="text" name="description" /></div>
+        <div>imgUrl<input type="text" name="imgUrl" /></div>
+        <div><button type="submit">Add product</button></div>
     </form>
+
 </body>
 
 </html>
