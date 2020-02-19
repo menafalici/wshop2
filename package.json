@@ -1,0 +1,16 @@
+{
+  "name": "wshop19feb",
+  "version": "0.0.1",
+  "description": "A simple webshop",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "keywords": [
+    "webshop",
+    "minimal",
+    "FED19S"
+  ],
+  "author": "Kemal Demirtas",
+  "license": "ISC"
+}
