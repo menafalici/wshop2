@@ -12,16 +12,22 @@
 </head>
 
 <body>
-    <!-- example, only to test page -->
-    <h1>Products gallery</h1>
+    <h1>Gallery</h1>
+
     <ul>
-        <li>Phone</li>
-        <li>Car</li>
-        <li>Table</li>
-        <li>Cat</li>
-        <li>Baby</li>
+        <% productList.forEach(product => { %>
+
+        <li>
+            <div>
+                <div><%= product.name %></div>
+                <div><%= product.price %></div>
+                <div><%= product.description %></div>
+                <img src="<%= product.imgUrl %> " alt="" />
+            </div>
+        </li>
+
+        <% }) %>
     </ul>
-    <!-- example ends -->
 
     <form action="/add-product" method="post">
         <div>Name<input type="text" name="name" /></div>

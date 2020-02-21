@@ -17,8 +17,12 @@ describe('Router tests', () => { // Huvudrubrik till våra test
         supertest(server).get('/product').expect(200, done)
     })
 
-    it('Should respond to post /product', (done) => {
-        supertest(server).post('/product').expect(200, done)
+    it('Should respond to post /add-product', (done) => {
+        supertest(server).post('/add-product').expect(302, done)
+    })
+
+    it('Should respond to /', (done) => {
+        supertest(server).get('/').expect(200, done)
     })
 
     afterEach((done) => {                       // afterEach körs efter varje 'it' test
