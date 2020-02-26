@@ -10,7 +10,7 @@ describe('Router tests', () => { // Huvudrubrik till våra test
     })
 
     it('Should respond to /gallery', (done) => {       // Ett test för att se om servern svarar på get /
-        supertest(server).get('/gallery').expect(200, done());   // vi testar om vi får svar på /
+        supertest(server).get('/gallery').expect(200, done);   // vi testar om vi får svar på /
     })
 
     it('Should respond to /product', (done) => {
@@ -23,10 +23,6 @@ describe('Router tests', () => { // Huvudrubrik till våra test
 
     it('Should respond to /', (done) => {
         supertest(server).get('/').expect(200, done)
-    })
-
-    it('Should respond to get /add-product', (done) => {
-        supertest(server).get('/add-product').expect(200, done)
     })
 
     afterEach((done) => {                       // afterEach körs efter varje 'it' test
