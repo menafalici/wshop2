@@ -5,7 +5,7 @@
 var express = require('express');
 var sassMiddleware = require('node-sass-middleware');
 var app = express();
-var port = 8080;
+var port = process.env.PORT || 8080;
 var productItem = require('../model/product');
 
 var ROUTE = {
