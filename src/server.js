@@ -1,7 +1,6 @@
 // Här ska vi definiera vår server! Men vi ska inte starta den
 // (alltså app.listen(port, ()=>{}), har vi inte i denna fil, utan i index.js)
 const express = require('express')
-const sassMiddleware = require('node-sass-middleware')
 const app = express()
 const port = process.env.PORT || 8080;
 const productItem = require('../model/product')
@@ -20,13 +19,16 @@ const VIEW = {
     addProduct: 'add-product'
 }
 
-app.use(sassMiddleware({ // tell sassMiddleware where src file and dest directory is
+if (process.env.NODE_ENV != 'production') {
+    const sassMiddleware = require('node-sass-middleware')
+    app.use(sassMiddleware({ // tell sassMiddleware where src file and dest directory is
         src: 'sass',
         dest: 'public',
         // debug: true, // för att skriva ut data till konsollen
         outputStyle: 'compressed'
     }))
-    // define a static folder, 'public'
+}
+// define a static folder, 'public'
 app.use(express.static('public'))
     // 
 app.use(express.urlencoded({ extended: true }));
