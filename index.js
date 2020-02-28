@@ -3,7 +3,6 @@
 
 const mongoose = require('mongoose')
 const { app, port } = require('./src/server')
-const dbConfig = require('./config/config')
 const dbOptions = { useUnifiedTopology: true, useNewUrlParser: true }
 
 let dbUrl = process.env.MONGO_ATLAS_URL
