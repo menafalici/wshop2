@@ -1,9 +1,6 @@
 // Härifrån startar vi upp vår webshop
 
 
-
-
-// Kicka igång servern
 const mongoose = require('mongoose')
 const { app, port } = require('./src/server')
 const dbConfig = require('./config/config')
