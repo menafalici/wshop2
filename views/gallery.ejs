@@ -17,17 +17,26 @@
     <ul>
         <% productList.forEach(product => { %>
 
-        <li class="product-list-item">
+        <li>
             <div>
                 <div><%= product.name %></div>
                 <div><%= product.price %></div>
                 <div><%= product.description %></div>
-                <div class="product-image-container"><img src="<%= product.imgUrl %> " alt="" /></div>
+                <img src="<%= product.imgUrl %> " alt="" />
             </div>
         </li>
 
         <% }) %>
     </ul>
+
+    <form action="/add-product" method="post">
+        <div>Name<input type="text" name="name" /></div>
+        <div>Price<input type="text" name="price" /></div>
+        <div>Desc<input type="text" name="description" /></div>
+        <div>imgUrl<input type="text" name="imgUrl" /></div>
+        <div><button type="submit">Add product</button></div>
+    </form>
+
 </body>
 
 </html>
