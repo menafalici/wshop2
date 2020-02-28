@@ -8,15 +8,6 @@ const dbOptions = { useUnifiedTopology: true, useNewUrlParser: true }
 
 let dbUrl = process.env.MONGO_ATLAS_URL
 
-if (dbUrl == undefined) {
-
-    try {
-        dbUrl = require('./config/config').databaseURL
-    } catch (exception) {
-        console.log("could not load local config file", exception.message)
-    }
-}
-
 
 
 
